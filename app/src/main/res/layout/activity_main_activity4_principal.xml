@@ -7,4 +7,11 @@
     android:background="@color/colorFondo"
     tools:context=".MainActivity4Principal">
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="312dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="16dp"></LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
