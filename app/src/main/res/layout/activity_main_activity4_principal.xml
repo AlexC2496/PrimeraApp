@@ -41,7 +41,7 @@
                         android:text="Ejercicios"
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
-                        android:textSize="24sp" />
+                        android:textSize="18sp" />
 
                     <Button
                         android:id="@+id/textView14"
@@ -51,7 +51,7 @@
                         android:text="Horarios"
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
-                        android:textSize="24sp" />
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -68,7 +68,7 @@
                         android:text="Ejercicios"
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
-                        android:textSize="24sp" />
+                        android:textSize="18sp" />
 
                     <Button
                         android:id="@+id/textView17"
@@ -78,7 +78,7 @@
                         android:text="Horarios"
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
-                        android:textSize="24sp" />
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -97,7 +97,7 @@
                     android:text="Ejercicios"
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
-                    android:textSize="24sp" />
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/textView20"
@@ -107,7 +107,7 @@
                     android:text="Horarios"
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
-                    android:textSize="24sp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -124,7 +124,7 @@
                     android:text="Ejercicios"
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
-                    android:textSize="24sp" />
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/textView23"
@@ -134,7 +134,7 @@
                     android:text="Horarios"
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
-                    android:textSize="24sp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
         </LinearLayout>
@@ -195,8 +195,8 @@
 
     <ImageButton
         android:id="@+id/imageButton11"
-        android:layout_width="107dp"
-        android:layout_height="115dp"
+        android:layout_width="106dp"
+        android:layout_height="119dp"
         android:background="#F0FB9931"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
