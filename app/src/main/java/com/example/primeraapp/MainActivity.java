@@ -2,7 +2,9 @@ package com.example.primeraapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,4 +13,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-}
+
+        public void Registrar (View view)
+        {
+            Intent registrar = new Intent (this, MainActivity3_Registrarse.class);
+            startActivity(registrar);
+        }
+        public void Inicio (View view)
+        {
+        Intent iniciar = new Intent (this, MainActivity2_Login.class);
+        startActivity(iniciar);
+        }
+    }
