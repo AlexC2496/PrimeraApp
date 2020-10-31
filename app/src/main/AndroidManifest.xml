@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MainActivity5Musculacion"></activity>
+        <activity android:name=".MainActivity6Cardio"></activity>
+        <activity android:name=".MainActivity5Musculacion" />
         <activity android:name=".MainActivity4Principal" />
         <activity android:name=".MainActivity3_Registrarse" />
         <activity android:name=".MainActivity2_Login" />
