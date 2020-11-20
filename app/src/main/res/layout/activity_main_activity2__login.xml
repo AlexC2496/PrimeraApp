@@ -126,7 +126,7 @@
         android:layout_marginTop="76dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_ro"
-        android:onClick="Inicio"
+        android:onClick="onClick"
         android:text="Iniciar Sesion"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"

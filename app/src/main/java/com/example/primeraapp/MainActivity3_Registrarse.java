@@ -55,7 +55,7 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
 
         btnRegistrar.setOnClickListener(this);
     }
-    
+
     private void registrarUsuario() {
         //Obtener el email y la contraseña
         String email = TextEmail.getText().toString().trim();
@@ -81,37 +81,27 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
                         if (task.isSuccessful()) {
                             Toast.makeText(MainActivity3_Registrarse.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
                         } else {
-                            if (task.getException() instanceof FirebaseAuthUserCollisionException){
-                                Toast.makeText(MainActivity3_Registrarse.this,"El usuario ya existe", Toast.LENGTH_LONG).show();
-                                    Intent inicio = new Intent(getApplication(),MainActivity3_Registrarse.class);
-                            }else {
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                Toast.makeText(MainActivity3_Registrarse.this, "El usuario ya existe", Toast.LENGTH_LONG).show();
+                                Intent inicio = new Intent(getApplication(), MainActivity2_Login.class);
+                            } else {
                                 Toast.makeText(MainActivity3_Registrarse.this, "No se pudo registrar el usuario", Toast.LENGTH_LONG).show();
                             }
+                            progressDialog.dismiss();
                         }
-                        progressDialog.dismiss();
                     }
                 });
     }
+    public void Atras(View view) {
+        Intent atras = new Intent(this, MainActivity.class);
+        startActivity(atras);
+    }
 
 
-
-    @Override
+        @Override
     public void onClick(View view) {
         registrarUsuario();
 
     }
 
-
-
-    /*public void Siguiente(View view) {
-        Intent siguiente = new Intent(this, MainActivity4Principal.class);
-        startActivity(siguiente);
-    }
-
-    public void Atras(View view) {
-        Intent atras = new Intent(this, MainActivity.class);
-        startActivity(atras);
-    }/*
-
-     */
 }

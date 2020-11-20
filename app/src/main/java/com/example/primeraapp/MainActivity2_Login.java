@@ -47,17 +47,12 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
 
         btnInicio.setOnClickListener(this);
 
-
     }
-
-
-
-
 
 
     private void iniciarrUsuario() {
         //Obtener el email y la contraseña
-        String email = TextEmail2.getText().toString().trim();
+        final String email = TextEmail2.getText().toString().trim();
         String password = TextPassword2.getText().toString().trim();
 
         //Verificamos que los datos no estan vacios
@@ -72,32 +67,40 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
 
         progressDialog.setMessage("Realizando registro de usuario...");
         progressDialog.show();
-
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
+        firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        //checking if success
                         if (task.isSuccessful()) {
+                            int pos = email.indexOf("@");
+                            String user = email.substring(0, pos);
                             Toast.makeText(MainActivity2_Login.this, "Bienvenido: " + TextEmail2.getText(), Toast.LENGTH_LONG).show();
-                            Intent inicio = new Intent(getApplication(),MainActivity4Principal.class);
+                            Intent inicio = new Intent(getApplication(), MainActivity4Principal.class);
+                            inicio.putExtra(MainActivity4Principal.user, user);
+                            startActivity(inicio);
 
+
+                        } else {
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {//si se presenta una colisión
+                                Toast.makeText(MainActivity2_Login.this, "El usuario ya existe ", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(MainActivity2_Login.this, "El usuario no existe ", Toast.LENGTH_LONG).show();
+                            }
                         }
-
                         progressDialog.dismiss();
                     }
                 });
+
+
     }
 
-   /* public void Inicio(View view) {
-        Intent inicio = new Intent(this, MainActivity4Principal.class);
-        startActivity(inicio);
-    }
 
     public void VolverAtras(View view) {
         Intent atras = new Intent(this, MainActivity.class);
         startActivity(atras);
     }
-*/
+
     @Override
     public void onClick(View view) {
         iniciarrUsuario();

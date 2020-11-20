@@ -179,22 +179,6 @@
         app:layout_constraintVertical_bias="0.653"
         app:srcCompat="@drawable/yoga" />
 
-    <TextView
-        android:id="@+id/txtPrincipal"
-        android:layout_width="322dp"
-        android:layout_height="30dp"
-        android:background="@drawable/button_ro"
-        android:text="INFORMACION ACTIVIDADES"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
-
     <ImageButton
         android:id="@+id/imageButton11"
         android:layout_width="106dp"
