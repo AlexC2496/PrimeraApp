@@ -1,15 +1,19 @@
 package com.example.primeraapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.Checkable;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -20,6 +24,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.FirebaseDatabase;
 
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -29,10 +34,15 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
     Spinner combo;
     private EditText TextEmail;
     private EditText TextPassword;
+    private EditText TextName;
     private Button btnRegistrar;
+    private Checkable Cterminos1;
+    private CheckBox Cterminos2;
     private ProgressDialog progressDialog;
+    private CheckBox seleccionDireccion;
 
     private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,21 +55,30 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
 
         //Inicializamos objeto
         firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
 
         //Referecnias
         TextEmail = (EditText) findViewById(R.id.email);
         TextPassword = (EditText) findViewById(R.id.password);
+        TextName = (EditText) findViewById(R.id.nombre);
+
 
         btnRegistrar = (Button) findViewById(R.id.btnAceptar);
         progressDialog = new ProgressDialog(this);
 
         btnRegistrar.setOnClickListener(this);
+
+        seleccionDireccion = (CheckBox) findViewById(R.id.terminos1);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void registrarUsuario() {
         //Obtener el email y la contraseña
         String email = TextEmail.getText().toString().trim();
         String password = TextPassword.getText().toString().trim();
+        String nombre = TextName.getText().toString().trim();
+
 
         //Verificamos que los datos no estan vacios
         if (TextUtils.isEmpty(email)) {
@@ -70,6 +89,12 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
             Toast.makeText(this, "Falta ingresar la contraseña", Toast.LENGTH_LONG).show();
             return;
         }
+        if (TextUtils.isEmpty(nombre)) {
+            Toast.makeText(this, "Falta ingresar el nombre", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+
 
         progressDialog.setMessage("Realizando registro de usuario...");
         progressDialog.show();
@@ -92,16 +117,26 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
                     }
                 });
     }
+
+
+
+        public void loguearCheckbox(View view) {
+            String s = "Estado: " + (seleccionDireccion.isChecked() ? "Marcado" : "No Marcado");
+            Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+        }
+
+
     public void Atras(View view) {
         Intent atras = new Intent(this, MainActivity.class);
         startActivity(atras);
     }
 
 
+        @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         @Override
     public void onClick(View view) {
-        registrarUsuario();
+            registrarUsuario();
 
-    }
+        }
 
 }

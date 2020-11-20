@@ -15,7 +15,7 @@ public class MainActivity4Principal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activity4_principal);
-        txtUser=(TextView)findViewById(R.id.txtPrincipal);
+        txtUser=(TextView)findViewById(R.id.principal);
 
     }
     public void Siguiente(View view) {
