@@ -152,7 +152,7 @@
         app:layout_constraintHorizontal_bias="0.823"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102"
+        app:layout_constraintVertical_bias="0.167"
         app:srcCompat="@drawable/gym3" />
 
     <ImageView
@@ -180,7 +180,7 @@
         app:srcCompat="@drawable/yoga" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/txtPrincipal"
         android:layout_width="322dp"
         android:layout_height="30dp"
         android:background="@drawable/button_ro"
@@ -193,7 +193,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.002" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <ImageButton
         android:id="@+id/imageButton11"
