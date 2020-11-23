@@ -41,10 +41,8 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
         //Referecnias
         TextEmail2 = (EditText) findViewById(R.id.email2);
         TextPassword2 = (EditText) findViewById(R.id.password2);
-
         btnInicio = (Button) findViewById(R.id.btnInicio);
         progressDialog = new ProgressDialog(this);
-
         btnInicio.setOnClickListener(this);
 
     }
@@ -65,7 +63,7 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
             return;
         }
 
-        progressDialog.setMessage("Realizando registro de usuario...");
+        progressDialog.setMessage("Cargando...");
         progressDialog.show();
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -95,14 +93,15 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
 
     }
 
+    @Override
+    public void onClick(View view) {
+        iniciarrUsuario();
+    }
+
 
     public void VolverAtras(View view) {
         Intent atras = new Intent(this, MainActivity.class);
         startActivity(atras);
     }
-
-    @Override
-    public void onClick(View view) {
-        iniciarrUsuario();
-    }
 }
+

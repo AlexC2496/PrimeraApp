@@ -172,5 +172,4 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
             registrarUsuario();
 
         }
-
 }
