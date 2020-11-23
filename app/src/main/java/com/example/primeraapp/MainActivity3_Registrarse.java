@@ -10,12 +10,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.Checkable;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,20 +37,34 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
     private Button btnRegistrar;
     private ProgressDialog progressDialog;
     private CheckBox seleccionDireccion;
-    private ProgressBar progressBar;
+    private TextView Textsexo;
+
 
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase database;
-
+    TextView opciones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activity3__registrarse);
-        Opciones = (TextView) findViewById(R.id.etiSeleccion);
+        Opciones = (TextView) findViewById(R.id.opciones);
         combo = (Spinner) findViewById(R.id.spinnerOpciones);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.combo, android.R.layout.simple_spinner_item);
         combo.setAdapter(adapter);
+        combo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+               // Toast.makeText(getApplicationContext(),"Seleccion: "+adapterView.getItemAtPosition(i).toString(),Toast.LENGTH_LONG).show();
+                Opciones.setText(adapterView.getItemAtPosition(i).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
 
         //Inicializamos objeto
         firebaseAuth = FirebaseAuth.getInstance();
@@ -63,10 +76,11 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
         TextPassword = (EditText) findViewById(R.id.password);
         TextName = (EditText) findViewById(R.id.nombre);
         textTelefono = (EditText) findViewById(R.id.telefono);
+        Textsexo =(TextView) findViewById(R.id.opciones);
 
         btnRegistrar = (Button) findViewById(R.id.btnAceptar);
         progressDialog = new ProgressDialog(this);
-        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+
 
         btnRegistrar.setOnClickListener(this);
 
@@ -80,6 +94,7 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
         String password = TextPassword.getText().toString().trim();
         final String nombre = TextName.getText().toString().trim();
         final String telefono = textTelefono.getText().toString().trim();
+        final String sexo = Textsexo.getText().toString().trim();
 
 
         //Verificamos que los datos no estan vacios
@@ -100,8 +115,6 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
             return;
         }
 
-        //progressDialog.setMessage(View.VISIBLE);
-
 
 
         progressDialog.setMessage("Realizando registro de usuario...");
@@ -114,7 +127,7 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Usuario usuario = new Usuario(nombre,email,telefono);
+                            Usuario usuario = new Usuario(nombre,email,telefono,sexo);
 
 
                             FirebaseDatabase.getInstance().getReference("Usuario")
@@ -142,9 +155,6 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
                     }
                 });
     }
-
-
-
 
 
 
