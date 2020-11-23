@@ -24,4 +24,10 @@ public class MainActivity extends AppCompatActivity {
         Intent iniciar = new Intent (this, MainActivity2_Login.class);
         startActivity(iniciar);
         }
+
+    public void Mapa (View view) {
+        Intent mapa = new Intent(this, MapsActivity.class);
+        startActivity(mapa);
+    }
+
     }

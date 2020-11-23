@@ -38,16 +38,17 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
     private ProgressDialog progressDialog;
     private CheckBox seleccionDireccion;
     private TextView Textsexo;
-
-
+    private TextView opciones;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase database;
-    TextView opciones;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activity3__registrarse);
+
+        //Creacion del spinner
         Opciones = (TextView) findViewById(R.id.opciones);
         combo = (Spinner) findViewById(R.id.spinnerOpciones);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.combo, android.R.layout.simple_spinner_item);
@@ -55,8 +56,7 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
         combo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-               // Toast.makeText(getApplicationContext(),"Seleccion: "+adapterView.getItemAtPosition(i).toString(),Toast.LENGTH_LONG).show();
-                Opciones.setText(adapterView.getItemAtPosition(i).toString());
+                Opciones.setText(adapterView.getItemAtPosition(i).toString()); //Se mostrará en pantalla la opcion elegida por el usuario
             }
 
             @Override
@@ -88,8 +88,9 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    //Registro de usuario
     private void registrarUsuario() {
-        //Obtener el email y la contraseña
+        //Obtener los datos del usuario
         final String email = TextEmail.getText().toString().trim();
         String password = TextPassword.getText().toString().trim();
         final String nombre = TextName.getText().toString().trim();
@@ -117,7 +118,7 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
 
 
 
-        progressDialog.setMessage("Realizando registro de usuario...");
+        progressDialog.setMessage("Realizando registro de usuario..."); //Menaje que se muestra mientras el usuario se esta registrando.
         progressDialog.show();
 
         firebaseAuth.createUserWithEmailAndPassword(email, password)
@@ -127,7 +128,7 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Usuario usuario = new Usuario(nombre,email,telefono,sexo);
+                            Usuario usuario = new Usuario(nombre,email,telefono,sexo); //Creacion de un onnjeto de tipo usuario
 
 
                             FirebaseDatabase.getInstance().getReference("Usuario")
@@ -157,7 +158,7 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
     }
 
 
-
+    //Boton para volver atras
     public void Atras(View view) {
         Intent atras = new Intent(this, MainActivity.class);
         startActivity(atras);
@@ -166,6 +167,7 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
 
         @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         @Override
+        //Invocamos al metodo de registro de usuario
     public void onClick(View view) {
             registrarUsuario();
 
