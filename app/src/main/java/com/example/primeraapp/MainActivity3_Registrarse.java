@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Checkable;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,8 +27,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.FirebaseDatabase;
 
-import android.database.sqlite.SQLiteOpenHelper;
-
 public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity implements View.OnClickListener {
 
     TextView Opciones;
@@ -35,14 +34,15 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
     private EditText TextEmail;
     private EditText TextPassword;
     private EditText TextName;
+    private EditText textTelefono;
     private Button btnRegistrar;
-    private Checkable Cterminos1;
-    private CheckBox Cterminos2;
     private ProgressDialog progressDialog;
     private CheckBox seleccionDireccion;
+    private ProgressBar progressBar;
 
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +62,11 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
         TextEmail = (EditText) findViewById(R.id.email);
         TextPassword = (EditText) findViewById(R.id.password);
         TextName = (EditText) findViewById(R.id.nombre);
-
+        textTelefono = (EditText) findViewById(R.id.telefono);
 
         btnRegistrar = (Button) findViewById(R.id.btnAceptar);
         progressDialog = new ProgressDialog(this);
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
         btnRegistrar.setOnClickListener(this);
 
@@ -75,9 +76,10 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void registrarUsuario() {
         //Obtener el email y la contraseña
-        String email = TextEmail.getText().toString().trim();
+        final String email = TextEmail.getText().toString().trim();
         String password = TextPassword.getText().toString().trim();
-        String nombre = TextName.getText().toString().trim();
+        final String nombre = TextName.getText().toString().trim();
+        final String telefono = textTelefono.getText().toString().trim();
 
 
         //Verificamos que los datos no estan vacios
@@ -93,6 +95,12 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
             Toast.makeText(this, "Falta ingresar el nombre", Toast.LENGTH_LONG).show();
             return;
         }
+        if (TextUtils.isEmpty(telefono)) {
+            Toast.makeText(this, "Falta ingresar el telefono", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        //progressDialog.setMessage(View.VISIBLE);
 
 
 
@@ -101,18 +109,35 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
 
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
+
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(MainActivity3_Registrarse.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
-                        } else {
-                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                                Toast.makeText(MainActivity3_Registrarse.this, "El usuario ya existe", Toast.LENGTH_LONG).show();
-                                Intent inicio = new Intent(getApplication(), MainActivity2_Login.class);
-                            } else {
-                                Toast.makeText(MainActivity3_Registrarse.this, "No se pudo registrar el usuario", Toast.LENGTH_LONG).show();
-                            }
-                            progressDialog.dismiss();
+                            Usuario usuario = new Usuario(nombre,email,telefono);
+
+
+                            FirebaseDatabase.getInstance().getReference("Usuario")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(usuario).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(MainActivity3_Registrarse.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
+
+                                    } else {
+                                        if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                            Toast.makeText(MainActivity3_Registrarse.this, "El usuario ya existe", Toast.LENGTH_LONG).show();
+                                            Intent inicio = new Intent(getApplication(), MainActivity2_Login.class);
+                                        } else {
+                                            Toast.makeText(MainActivity3_Registrarse.this, "No se pudo registrar el usuario", Toast.LENGTH_LONG).show();
+                                        }
+                                        progressDialog.dismiss();
+                                    }
+                                }
+
+                            });
+
                         }
                     }
                 });
@@ -120,10 +145,7 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
 
 
 
-        public void loguearCheckbox(View view) {
-            String s = "Estado: " + (seleccionDireccion.isChecked() ? "Marcado" : "No Marcado");
-            Toast.makeText(this, s, Toast.LENGTH_LONG).show();
-        }
+
 
 
     public void Atras(View view) {
