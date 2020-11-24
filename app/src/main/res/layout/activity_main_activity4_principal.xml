@@ -211,4 +211,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.082" />
 
+    <ImageView
+        android:id="@+id/perfil"
+        android:layout_width="114dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btnGallery"
+        android:layout_width="71dp"
+        android:layout_height="59dp"
+        android:background="@drawable/button_ro"
+        android:text="Foto"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="39dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
