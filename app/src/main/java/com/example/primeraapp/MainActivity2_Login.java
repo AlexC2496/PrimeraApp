@@ -30,7 +30,7 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
 
     private FirebaseAuth firebaseAuth;
     private GoogleSignInApi mGoogleSignInClient;
-    private EditText recuperar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
         btnInicio = (Button) findViewById(R.id.btnInicio);
         progressDialog = new ProgressDialog(this);
         btnInicio.setOnClickListener(this);
-        recuperar = (EditText) findViewById(R.id.restPass);
+
 
     }
 
@@ -92,12 +92,8 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
                         progressDialog.dismiss();
                     }
                 });
-            recuperar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    
-                }
-            });
+
+
 
 
     }
