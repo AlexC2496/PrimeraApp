@@ -87,6 +87,8 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
         seleccionDireccion = (CheckBox) findViewById(R.id.terminos1);
     }
 
+
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     //Registro de usuario
     private void registrarUsuario() {
@@ -116,7 +118,7 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
             return;
         }
 
-
+      
 
         progressDialog.setMessage("Realizando registro de usuario..."); //Menaje que se muestra mientras el usuario se esta registrando.
         progressDialog.show();

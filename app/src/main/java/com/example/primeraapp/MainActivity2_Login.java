@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignInApi;
@@ -29,6 +30,7 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
 
     private FirebaseAuth firebaseAuth;
     private GoogleSignInApi mGoogleSignInClient;
+    private EditText recuperar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
         btnInicio = (Button) findViewById(R.id.btnInicio);
         progressDialog = new ProgressDialog(this);
         btnInicio.setOnClickListener(this);
+        recuperar = (EditText) findViewById(R.id.restPass);
 
     }
 
@@ -89,6 +92,12 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
                         progressDialog.dismiss();
                     }
                 });
+            recuperar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    
+                }
+            });
 
 
     }
@@ -102,6 +111,10 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
     public void VolverAtras(View view) {
         Intent atras = new Intent(this, MainActivity.class);
         startActivity(atras);
+    }
+        public void Recuperar(View view) {
+            Intent recuperar= new Intent(this, MainActivity2_RecuperarPassword.class);
+            startActivity(recuperar);
     }
 }
 
