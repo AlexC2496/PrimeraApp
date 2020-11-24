@@ -26,7 +26,7 @@ public class MainActivity4Principal extends AppCompatActivity {
     Button btnGallery;
 
     private static final int REQUEST_PERMISSION_CODE = 100;
-    private static final int REQUEST_IMAGE_GALLERY =101;
+    private static final int REQUEST_IMAGE_GALLERY = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +84,6 @@ public class MainActivity4Principal extends AppCompatActivity {
         intent.setType("image/*");
         startActivityForResult(intent, REQUEST_IMAGE_GALLERY);
     }
-
-
 
 
 
