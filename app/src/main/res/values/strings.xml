@@ -1,5 +1,26 @@
 <resources>
     <string name="app_name">PrimeraApp</string>
     <string name="title_activity_maps">Map</string>
+    <string name="titulo1">Welcome</string>
+    <string name="Registro">Log in</string>
+    <string name="Iniciar_Sesion">Sign in</string>
+    <string name="Nombre_Usuario">Name</string>
+    <string name="Constrasena">Password</string>
+    <string name="Atras">Go back</string>
+    <string name="Recuperar_Contrasena">Forgot your password</string>
+    <string name="Email">Email</string>
+    <string name="Telefono">Phone</string>
+    <string name="Terminos1"> Accept the terms</string>
+    <string name="Terminos2"> Confirm the terms</string>
+    <string name="Acept">Acept</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Ejercicios">Exercise</string>
+    <string name="Horarios">Schedule</string>
+    <string name="Chest_exercises">Chest exercises</string>
+    <string name="Back_exercises">Back exercises</string>
+    <string name="Shoulder_exercises">Shoulder exercises</string>
+    <string name="Abdominal_exercises">Abdominal exercises</string>
+    <string name="Ejercicio3">Biceps / Triceps exercises</string>
+    <string name="Photo">Photo</string>
 
 </resources>

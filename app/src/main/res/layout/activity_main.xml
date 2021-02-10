@@ -16,7 +16,7 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/button_ro"
         android:onClick="Registrar"
-        android:text="Sign in"
+        android:text="@string/Iniciar_Sesion"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -46,16 +46,16 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/button_ro"
-        android:text="Welcome"
+        android:text="@string/titulo1"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.088" />
 
     <Button
         android:id="@+id/button5"
@@ -66,7 +66,7 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/button_ro"
         android:onClick="Inicio"
-        android:text="Log in"
+        android:text="@string/Registro"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
