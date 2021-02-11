@@ -83,6 +83,7 @@
         android:layout_width="126dp"
         android:layout_height="109dp"
         android:background="@drawable/button_ro"
+        android:onClick="SiguienteCardio"
         android:text="@string/Chest_exercises"
         android:textColor="@color/colorBordes"
         app:layout_constraintBottom_toBottomOf="parent"
