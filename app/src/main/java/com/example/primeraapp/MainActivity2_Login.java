@@ -108,9 +108,6 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
         Intent atras = new Intent(this, MainActivity.class);
         startActivity(atras);
     }
-        public void Recuperar(View view) {
-            Intent recuperar= new Intent(this, MainActivity2_RecuperarPassword.class);
-            startActivity(recuperar);
-    }
+
 }
 
