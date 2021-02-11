@@ -18,4 +18,9 @@ public class MainActivity5Musculacion extends AppCompatActivity {
         Intent atras = new Intent(this, MainActivity4Principal.class);
         startActivity(atras);
     }
+
+    public void SiguienteCardio(View view) {
+        Intent siguienteCardio = new Intent(this, MainActivity_Ejercicios.class);
+        startActivity(siguienteCardio);
+    }
 }
