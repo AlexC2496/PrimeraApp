@@ -22,5 +22,6 @@
     <string name="Abdominal_exercises">Abdominal exercises</string>
     <string name="Ejercicio3">Biceps / Triceps exercises</string>
     <string name="Photo">Photo</string>
-
+    <string name="Item1">"Option 1"</string>
+    <string name="Item2">"Option 2"</string>
 </resources>

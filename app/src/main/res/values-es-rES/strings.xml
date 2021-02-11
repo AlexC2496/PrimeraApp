@@ -23,6 +23,7 @@
     <string name="Shoulder_exercises">Ejercicios Hombro</string>
     <string name="Abdominal_exercises">Ejercicios Abdominales</string>
     <string name="Ejercicio3">Ejercicios Biceps / Triceps</string>
-
+    <string name="Item1">"Opcion 1"</string>
+    <string name="Item2">"Opcion 2"</string>
 
 </resources>
