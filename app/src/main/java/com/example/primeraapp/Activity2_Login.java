@@ -10,18 +10,16 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignInApi;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
-public class MainActivity2_Login extends AppCompatActivity implements View.OnClickListener {
+public class Activity2_Login extends AppCompatActivity implements View.OnClickListener {
 
     private EditText TextEmail2;
     private EditText TextPassword2;
@@ -76,17 +74,17 @@ public class MainActivity2_Login extends AppCompatActivity implements View.OnCli
                         if (task.isSuccessful()) {
                             int pos = email.indexOf("@");
                             String user = email.substring(0, pos);
-                            Toast.makeText(MainActivity2_Login.this, "Bienvenido: " + TextEmail2.getText(), Toast.LENGTH_LONG).show();
-                            Intent inicio = new Intent(getApplication(), MainActivity4Principal.class);
-                            inicio.putExtra(MainActivity4Principal.user, user);
+                            Toast.makeText(Activity2_Login.this, "Bienvenido: " + TextEmail2.getText(), Toast.LENGTH_LONG).show();
+                            Intent inicio = new Intent(getApplication(), Activity_Principal.class);
+                            inicio.putExtra(Activity_Principal.user, user);
                             startActivity(inicio);
 
 
                         } else {
                             if (task.getException() instanceof FirebaseAuthUserCollisionException) {//si se presenta una colisión
-                                Toast.makeText(MainActivity2_Login.this, "El usuario ya existe ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity2_Login.this, "El usuario ya existe ", Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(MainActivity2_Login.this, "El usuario no existe ", Toast.LENGTH_LONG).show();
+                                Toast.makeText(Activity2_Login.this, "El usuario no existe ", Toast.LENGTH_LONG).show();
                             }
                         }
                         progressDialog.dismiss();

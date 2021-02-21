@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
         public void Registrar (View view)
         {
-            Intent registrar = new Intent (this, MainActivity3_Registrarse.class);
+            Intent registrar = new Intent (this, Activity3_Registrarse.class);
             startActivity(registrar);
         }
         public void Inicio (View view)
         {
-        Intent iniciar = new Intent (this, MainActivity2_Login.class);
+        Intent iniciar = new Intent (this, Activity2_Login.class);
         startActivity(iniciar);
         }
 

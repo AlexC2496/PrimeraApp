@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorFondo"
-    tools:context=".MainActivity5Musculacion">
+    tools:context=".Activity5_Musculacion">
 
     <Button
         android:id="@+id/button8"
@@ -27,6 +27,7 @@
         android:layout_width="126dp"
         android:layout_height="109dp"
         android:background="@drawable/button_ro"
+        android:onClick="SiguienteAbdominales"
         android:text="@string/Abdominal_exercises"
         android:textColor="@color/colorBordes"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,6 +42,7 @@
         android:layout_width="126dp"
         android:layout_height="109dp"
         android:background="@drawable/button_ro"
+        android:onClick="SiguienteEspalda"
         android:text="@string/Back_exercises"
         android:textColor="@color/colorBordes"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,6 +57,7 @@
         android:layout_width="126dp"
         android:layout_height="109dp"
         android:background="@drawable/button_ro"
+        android:onClick="SiguienteHombro"
         android:text="@string/Shoulder_exercises"
         android:textColor="@color/colorBordes"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,6 +72,7 @@
         android:layout_width="126dp"
         android:layout_height="109dp"
         android:background="@drawable/button_ro"
+        android:onClick="SiguienteBrazo"
         android:text="@string/Ejercicio3"
         android:textColor="@color/colorBordes"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity5Musculacion extends AppCompatActivity {
+public class Activity5_Musculacion extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +15,7 @@ public class MainActivity5Musculacion extends AppCompatActivity {
     }
 
     public void Atras(View view) {
-        Intent atras = new Intent(this, MainActivity4Principal.class);
+        Intent atras = new Intent(this, Activity_Principal.class);
         startActivity(atras);
     }
 

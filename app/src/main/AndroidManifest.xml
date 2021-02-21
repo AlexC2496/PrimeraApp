@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".ejercicios_cardio"></activity>
+        <activity android:name=".Resetear_Contrasena"></activity>
+        <activity android:name=".ejercicios_cardio" />
         <activity android:name=".ejercicios_abdominales" />
         <activity android:name=".ejercicios_brazo" />
         <activity android:name=".ejercicios_espalda" />
@@ -39,10 +40,10 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".MainActivity5Musculacion" />
-        <activity android:name=".MainActivity4Principal" />
-        <activity android:name=".MainActivity3_Registrarse" />
-        <activity android:name=".MainActivity2_Login" />
+        <activity android:name=".Activity5_Musculacion" />
+        <activity android:name=".Activity_Principal" />
+        <activity android:name=".Activity3_Registrarse" />
+        <activity android:name=".Activity2_Login" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

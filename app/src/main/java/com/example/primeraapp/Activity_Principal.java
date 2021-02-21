@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity4Principal extends AppCompatActivity {
+public class Activity_Principal extends AppCompatActivity {
     public static final String user="names";
     TextView txtUser;
 
@@ -42,10 +42,10 @@ public class MainActivity4Principal extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-                    if (ActivityCompat.checkSelfPermission(MainActivity4Principal.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+                    if (ActivityCompat.checkSelfPermission(Activity_Principal.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
                         openGallery();
                     }else{
-                        ActivityCompat.requestPermissions(MainActivity4Principal.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_PERMISSION_CODE);
+                        ActivityCompat.requestPermissions(Activity_Principal.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_PERMISSION_CODE);
                     }
                 }else{
                     openGallery();
@@ -88,7 +88,7 @@ public class MainActivity4Principal extends AppCompatActivity {
 
 
     public void Siguiente(View view) {
-        Intent siguiente = new Intent(this, MainActivity5Musculacion.class);
+        Intent siguiente = new Intent(this, Activity5_Musculacion.class);
         startActivity(siguiente);
     }
 

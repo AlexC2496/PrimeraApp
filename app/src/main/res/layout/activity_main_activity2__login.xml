@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorFondo"
     android:onClick="Recuperar"
-    tools:context=".MainActivity2_Login">
+    tools:context=".Activity2_Login">
 
     <Button
         android:id="@+id/button3"

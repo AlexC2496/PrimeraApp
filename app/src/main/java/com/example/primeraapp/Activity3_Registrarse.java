@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity implements View.OnClickListener {
+public class Activity3_Registrarse<firebaseAuth> extends AppCompatActivity implements View.OnClickListener {
 
     TextView Opciones;
     Spinner combo;
@@ -139,14 +139,14 @@ public class MainActivity3_Registrarse<firebaseAuth> extends AppCompatActivity i
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(MainActivity3_Registrarse.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(Activity3_Registrarse.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
 
                                     } else {
                                         if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                                            Toast.makeText(MainActivity3_Registrarse.this, "El usuario ya existe", Toast.LENGTH_LONG).show();
-                                            Intent inicio = new Intent(getApplication(), MainActivity2_Login.class);
+                                            Toast.makeText(Activity3_Registrarse.this, "El usuario ya existe", Toast.LENGTH_LONG).show();
+                                            Intent inicio = new Intent(getApplication(), Activity2_Login.class);
                                         } else {
-                                            Toast.makeText(MainActivity3_Registrarse.this, "No se pudo registrar el usuario", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(Activity3_Registrarse.this, "No se pudo registrar el usuario", Toast.LENGTH_LONG).show();
                                         }
                                         progressDialog.dismiss();
                                     }
