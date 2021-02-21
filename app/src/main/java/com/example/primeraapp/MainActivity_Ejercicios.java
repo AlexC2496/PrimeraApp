@@ -15,7 +15,7 @@ public class MainActivity_Ejercicios extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main__ejercicios);
+        setContentView(R.layout.ejercicios_pecho);
 
       webView= (WebView) findViewById(R.id.wv_test);
 
