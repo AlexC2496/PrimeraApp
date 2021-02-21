@@ -19,8 +19,29 @@ public class MainActivity5Musculacion extends AppCompatActivity {
         startActivity(atras);
     }
 
-    public void SiguienteCardio(View view) {
-        Intent siguienteCardio = new Intent(this, MainActivity_Ejercicios.class);
-        startActivity(siguienteCardio);
+    public void SiguientePecho(View view) {
+        Intent siguientePecho = new Intent(this, MainActivity_Ejercicios.class);
+        startActivity(siguientePecho);
     }
+
+    public void SiguienteHombro(View view) {
+        Intent siguientehombro = new Intent(this, ejercicios_hombro.class);
+        startActivity(siguientehombro);
+    }
+
+    public void SiguienteEspalda(View view) {
+        Intent siguienteEspalda = new Intent(this, ejercicios_espalda.class);
+        startActivity(siguienteEspalda);
+    }
+
+    public void SiguienteAbdominales(View view) {
+        Intent siguienteAbdominales = new Intent(this, ejercicios_abdominales.class);
+        startActivity(siguienteAbdominales);
+    }
+
+    public void SiguienteBrazo(View view) {
+        Intent siguienteBrazo = new Intent(this, ejercicios_brazo.class);
+        startActivity(siguienteBrazo);
+    }
+
 }

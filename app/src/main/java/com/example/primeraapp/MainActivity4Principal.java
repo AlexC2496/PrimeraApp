@@ -92,6 +92,14 @@ public class MainActivity4Principal extends AppCompatActivity {
         startActivity(siguiente);
     }
 
+    public void SiguienteCardio(View view) {
+        Intent siguientec = new Intent(this, ejercicios_cardio.class);
+        startActivity(siguientec);
+    }
 
+    public void Atras(View view) {
+        Intent atras = new Intent(this, MainActivity.class);
+        startActivity(atras);
+    }
 
 }

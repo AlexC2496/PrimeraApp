@@ -8,8 +8,8 @@
     tools:context=".MainActivity4Principal">
 
     <LinearLayout
-        android:layout_width="207dp"
-        android:layout_height="615dp"
+        android:layout_width="185dp"
+        android:layout_height="497dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="605dp"
+            android:layout_height="302dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -36,20 +36,10 @@
                     <Button
                         android:id="@+id/ejeEjercicio1"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/button_ro"
                         android:onClick="Siguiente"
                         android:text="Exercise"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/background_light"
-                        android:textSize="18sp" />
-
-                    <Button
-                        android:id="@+id/btnHorario1"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@drawable/button_ro"
-                        android:text="Schedule"
                         android:textAlignment="center"
                         android:textColor="@android:color/background_light"
                         android:textSize="18sp" />
@@ -72,73 +62,10 @@
                         android:textColor="@android:color/background_light"
                         android:textSize="18sp" />
 
-                    <Button
-                        android:id="@+id/btnHorario2"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@drawable/button_ro"
-                        android:text="schedule"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/background_light"
-                        android:textSize="18sp" />
-
                 </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="157dp"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btnEjercicio3"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/button_ro"
-                    android:text="Exercise"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp" />
-
-                <Button
-                    android:id="@+id/btnHorario3"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/button_ro"
-                    android:text="schedule"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="141dp"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btnEjercicio4"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/button_ro"
-                    android:text="Exercise"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp" />
-
-                <Button
-                    android:id="@+id/btnHorario4"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/button_ro"
-                    android:text="schedule"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
@@ -149,10 +76,10 @@
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintHorizontal_bias="0.851"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167"
+        app:layout_constraintVertical_bias="0.307"
         app:srcCompat="@drawable/gym3" />
 
     <ImageView
@@ -161,36 +88,11 @@
         android:layout_height="79dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintHorizontal_bias="0.894"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403"
+        app:layout_constraintVertical_bias="0.536"
         app:srcCompat="@drawable/spinning" />
-
-    <ImageView
-        android:id="@+id/imageView18"
-        android:layout_width="85dp"
-        android:layout_height="91dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.831"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653"
-        app:srcCompat="@drawable/yoga" />
-
-    <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="106dp"
-        android:layout_height="119dp"
-        android:background="#F0FB9931"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.915"
-        app:srcCompat="@drawable/boxeo" />
 
     <EditText
         android:id="@+id/principal"
@@ -209,7 +111,22 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintVertical_bias="0.154" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="144dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button_ro"
+        android:onClick="Atras"
+        android:text="@string/Atras"
+        android:textColor="@color/colorBordes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.874" />
 
     <ImageView
         android:id="@+id/perfil"
@@ -220,20 +137,20 @@
         app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.105"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/btnGallery"
         android:layout_width="71dp"
         android:layout_height="59dp"
+        android:layout_marginTop="96dp"
         android:background="@drawable/button_ro"
         android:text="@string/Photo"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/principal"
+        app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toEndOf="@+id/perfil"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
