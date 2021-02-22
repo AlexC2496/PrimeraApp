@@ -3,20 +3,40 @@ package com.example.primeraapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private MenuItem item;
+    Button play_pause;
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        play_pause = (Button)findViewById(R.id.play_pause);
+        mp = MediaPlayer.create(this,R.raw.cancion);
+        play_pause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mp.isPlaying()){
+                    mp.pause();
+                    play_pause.setBackgroundResource(R.drawable.play);
+                    Toast.makeText(MainActivity.this,"Pause",Toast.LENGTH_SHORT).show();
+                }else{
+                    mp.start();
+                    play_pause.setBackgroundResource(R.drawable.pause);
+                    Toast.makeText(MainActivity.this,"Play",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
         public void Registrar (View view)
