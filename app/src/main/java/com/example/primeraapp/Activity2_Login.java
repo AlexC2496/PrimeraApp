@@ -107,5 +107,11 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
         startActivity(atras);
     }
 
+
+    public void RecuperarContrasena (View view) {
+        Intent recuperar = new Intent(this, Resetear_Contrasena.class);
+        startActivity(recuperar);
+    }
+
 }
 

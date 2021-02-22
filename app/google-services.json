@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "942182102038",
+    "firebase_url": "https://autenticar-b1b70.firebaseio.com",
+    "project_id": "autenticar-b1b70",
+    "storage_bucket": "autenticar-b1b70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942182102038:android:190e9b587b6858295e7137",
+        "android_client_info": {
+          "package_name": "com.example.primeraapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942182102038-3lr5lnnihjs30v2ftnen998s15uhpmcj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPphbDgkhiAE_HaSX1scK_5aUaBvOJsn0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942182102038-3lr5lnnihjs30v2ftnen998s15uhpmcj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
