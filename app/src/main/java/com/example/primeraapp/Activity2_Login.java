@@ -1,8 +1,5 @@
 package com.example.primeraapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.signin.GoogleSignInApi;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -56,11 +56,11 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
 
         //Verificamos que los datos no estan vacios
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Se debe ingresar un correo", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Se debe ingresar un correo", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Falta ingresar la contraseña", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Falta ingresar la contraseña", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -74,7 +74,7 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
                         if (task.isSuccessful()) {
                             int pos = email.indexOf("@");
                             String user = email.substring(0, pos);
-                            Toast.makeText(Activity2_Login.this, "Bienvenido: " + TextEmail2.getText(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(Activity2_Login.this, "Bienvenido: " + TextEmail2.getText(), Toast.LENGTH_SHORT).show();
                             Intent inicio = new Intent(getApplication(), Activity_Principal.class);
                             inicio.putExtra(Activity_Principal.user, user);
                             startActivity(inicio);

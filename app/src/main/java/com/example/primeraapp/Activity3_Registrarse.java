@@ -1,9 +1,5 @@
 package com.example.primeraapp;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
@@ -18,6 +14,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -102,19 +102,19 @@ public class Activity3_Registrarse<firebaseAuth> extends AppCompatActivity imple
 
         //Verificamos que los datos no estan vacios
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Se debe ingresar un correo", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Se debe ingresar un correo", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Falta ingresar la contraseña", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Falta ingresar la contraseña", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(nombre)) {
-            Toast.makeText(this, "Falta ingresar el nombre", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Falta ingresar el nombre", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(telefono)) {
-            Toast.makeText(this, "Falta ingresar el telefono", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Falta ingresar el telefono", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -139,14 +139,14 @@ public class Activity3_Registrarse<firebaseAuth> extends AppCompatActivity imple
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(Activity3_Registrarse.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(Activity3_Registrarse.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_SHORT).show();
 
                                     } else {
                                         if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                                            Toast.makeText(Activity3_Registrarse.this, "El usuario ya existe", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(Activity3_Registrarse.this, "El usuario ya existe", Toast.LENGTH_SHORT).show();
                                             Intent inicio = new Intent(getApplication(), Activity2_Login.class);
                                         } else {
-                                            Toast.makeText(Activity3_Registrarse.this, "No se pudo registrar el usuario", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(Activity3_Registrarse.this, "No se pudo registrar el usuario", Toast.LENGTH_SHORT).show();
                                         }
                                         progressDialog.dismiss();
                                     }
