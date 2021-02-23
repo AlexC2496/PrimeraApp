@@ -1,10 +1,5 @@
 package com.example.primeraapp;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
@@ -12,11 +7,18 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 public class Activity_Principal extends AppCompatActivity {
     public static final String user="names";
@@ -52,6 +54,27 @@ public class Activity_Principal extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.overflow, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.item1){
+            Intent siguiente = new Intent(this, Activity5_Musculacion.class);
+            startActivity(siguiente);
+            Toast.makeText(this,"Go to exsercise",Toast.LENGTH_SHORT).show();
+        } else if(id == R.id.item2){
+            Intent atras = new Intent(this, MainActivity.class);
+            startActivity(atras);
+            Toast.makeText(this,"Go back",Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.item3) {
+            Toast.makeText(this,"Select lenguage",Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
