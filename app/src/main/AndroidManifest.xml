@@ -14,11 +14,11 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="ACFIT"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Resetear_Contrasena"></activity>
+        <activity android:name=".Resetear_Contrasena" />
         <activity android:name=".ejercicios_cardio" />
         <activity android:name=".ejercicios_abdominales" />
         <activity android:name=".ejercicios_brazo" />
@@ -44,7 +44,8 @@
         <activity android:name=".Activity_Principal" />
         <activity android:name=".Activity3_Registrarse" />
         <activity android:name=".Activity2_Login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
