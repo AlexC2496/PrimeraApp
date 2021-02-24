@@ -1,8 +1,5 @@
 package com.example.primeraapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -67,9 +67,6 @@ public class Resetear_Contrasena extends AppCompatActivity {
         mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-
-
-
                 if(task.isSuccessful()){
 
                     info.setText(auxInfo +" "+email);
@@ -81,13 +78,10 @@ public class Resetear_Contrasena extends AppCompatActivity {
                 }else{
                     Toast.makeText(Resetear_Contrasena.this, "Ha ocurrido un error.", Toast.LENGTH_SHORT).show();
                 }
-
                 mDialog.dismiss();
             }
         });
 
-
     }
-
 
 }

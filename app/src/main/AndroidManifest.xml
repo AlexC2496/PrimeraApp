@@ -18,6 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
+        <activity android:name=".prueba"></activity>
+        <activity android:name=".Perfil" />
         <activity android:name=".Resetear_Contrasena" />
         <activity android:name=".ejercicios_cardio" />
         <activity android:name=".ejercicios_abdominales" />
@@ -44,7 +46,7 @@
         <activity android:name=".Activity_Principal" />
         <activity android:name=".Activity3_Registrarse" />
         <activity android:name=".Activity2_Login" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
