@@ -165,6 +165,10 @@ public class Activity3_Registrarse<firebaseAuth> extends AppCompatActivity imple
         Intent atras = new Intent(this, MainActivity.class);
         startActivity(atras);
     }
+    public void politica(View view) {
+        Intent politicas = new Intent(this, terminos.class);
+        startActivity(politicas);
+    }
 
 
         @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

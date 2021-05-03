@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".prueba"></activity>
+        <activity android:name=".terminos"></activity>
+        <activity android:name=".prueba" />
         <activity android:name=".Perfil" />
         <activity android:name=".Resetear_Contrasena" />
         <activity android:name=".ejercicios_cardio" />

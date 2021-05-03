@@ -25,6 +25,23 @@
     <string name="Item1">Go to exercice</string>
     <string name="Item2">Go back</string>
     <string name="Item3">Select language</string>
-
+    <string name="datos">Check the termens</string>
+    <string name="info">
+        We collect information to provide better services to all our users — from figuring out basic stuff like which language you speak, to more complex things
+        like which ads you’ll find most useful, the people who matter most to you online, or which YouTube videos you might like.
+        The information Google collects, and how that information is used, depends on how you use our services and how you manage your privacy controls.
+        When you’re not signed in to a Google Account, we store the information we collect with unique identifiers tied to the browser, application, or device you’re using.
+        This helps us do things like maintain your language preferences across browsing sessions.
+        We collect information about your activity in our services, which we use to do things like recommend a YouTube video you might like.
+        The activity information we collect may include:
+        Terms you search for
+        Videos you watch
+        Views and interactions with content and ads
+        Voice and audio information when you use audio features
+        Purchase activity
+        People with whom you communicate or share content
+        Activity on third-party sites and apps that use our services
+        Chrome browsing history you’ve synced with your Google Account
+    </string>
 
 </resources>

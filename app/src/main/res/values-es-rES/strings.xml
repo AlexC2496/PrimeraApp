@@ -26,5 +26,24 @@
     <string name="Item1">Ir a ejericios</string>
     <string name="Item2">Atras"</string>
     <string name="Item3">Seleccionar idioma</string>
+    <string name="datos">Marcar los terminos</string>
+    <string name="info">
+        Recogemos información para proporcionar los mejores servicios a todos nuestros usuarios: desde determinar información básica, como el idioma que hablas, hasta datos más complejos,
+        como los anuncios que te resultarán más útiles, las personas que más te interesan online o los vídeos de YouTube que te pueden gustar.
+        El tipo de información que recoge Google y cómo se utiliza esa información depende del uso que hagas de nuestros servicios y de cómo administres los controles de privacidad.
+        Si no has iniciado sesión en una cuenta de Google, almacenamos la información que recogemos con identificadores únicos vinculados al navegador, la aplicación o el dispositivo que utilices.
+        Esto nos permite, por ejemplo, mantener tus preferencias de idioma en todas las sesiones de navegación.
+        Si has iniciado sesión, también recogemos información que almacenamos en tu cuenta de Google y que tratamos como información personal.
+        Recogemos información sobre tu actividad en nuestros servicios, que utilizamos para realizar acciones como recomendartevídeos de YouTube que pueden gustarte.
+        A continuación, te indicamos la información de actividad que podemos recoger:
+        Los términos que buscas
+        Los vídeos que ves
+        Las visualizaciones y las interacciones con el contenido y los anuncios
+        Información sobre voz y audio cuando utilizas funciones de audio
+        Actividad de compra
+        Usuarios con los que te comunicas o compartes contenido
+        Actividad en sitios web y aplicaciones de terceros que utilizan nuestros servicios
+        Historial de navegación de Chrome que has sincronizado con tu cuenta de Google
+    </string>
 
 </resources>
