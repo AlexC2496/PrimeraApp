@@ -9,6 +9,8 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import actPrincipales.Activity3_Registrarse;
+
 public class terminos extends AppCompatActivity {
 
     RadioButton rb1;

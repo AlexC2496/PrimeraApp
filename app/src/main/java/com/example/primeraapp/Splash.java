@@ -7,6 +7,8 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import actPrincipales.MainActivity;
+
 public class Splash extends AppCompatActivity {
 
     private final int Duracion_Splash = 2000;

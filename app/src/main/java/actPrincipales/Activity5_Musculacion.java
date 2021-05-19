@@ -1,4 +1,4 @@
-package com.example.primeraapp;
+package actPrincipales;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,12 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.primeraapp.R;
+import ejercicios.ejercicios_abdominales;
+import ejercicios.ejercicios_brazo;
+import ejercicios.ejercicios_espalda;
+import ejercicios.ejercicios_hombro;
 
 public class Activity5_Musculacion extends AppCompatActivity {
 

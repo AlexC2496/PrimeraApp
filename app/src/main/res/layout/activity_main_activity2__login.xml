@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2979FF"
-    android:onClick="Recuperar"
-    tools:context=".Activity2_Login">
+    android:onClick="onClick"
+    tools:context="actPrincipales.Activity2_Login">
 
     <Button
         android:id="@+id/button3"

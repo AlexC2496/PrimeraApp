@@ -1,4 +1,4 @@
-package com.example.primeraapp;
+package actPrincipales;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -19,6 +19,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.primeraapp.R;
+import com.example.primeraapp.Usuario;
+import com.example.primeraapp.terminos;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

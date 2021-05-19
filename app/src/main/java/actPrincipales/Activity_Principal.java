@@ -1,4 +1,4 @@
-package com.example.primeraapp;
+package actPrincipales;
 
 import android.Manifest;
 import android.app.Activity;
@@ -19,6 +19,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+
+import com.example.primeraapp.R;
+import ejercicios.ejercicios_cardio;
 
 public class Activity_Principal extends AppCompatActivity {
     public static final String user="names";
@@ -57,7 +60,7 @@ public class Activity_Principal extends AppCompatActivity {
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.overflow, menu);
+        getMenuInflater().inflate(R.menu.menu_simple, menu);
         return true;
     }
 
@@ -67,12 +70,10 @@ public class Activity_Principal extends AppCompatActivity {
             Intent siguiente = new Intent(this, Activity5_Musculacion.class);
             startActivity(siguiente);
             Toast.makeText(this,"Go to exsercise",Toast.LENGTH_SHORT).show();
-        } else if(id == R.id.item2){
+        } else if(id == R.id.item2) {
             Intent atras = new Intent(this, MainActivity.class);
             startActivity(atras);
-            Toast.makeText(this,"Go back",Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.item3) {
-            Toast.makeText(this,"Select lenguage",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Go back", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }

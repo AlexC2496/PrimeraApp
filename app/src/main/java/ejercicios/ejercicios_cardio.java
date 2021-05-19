@@ -1,4 +1,4 @@
-package com.example.primeraapp;
+package ejercicios;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.VideoView;
+
+import com.example.primeraapp.R;
 
 public class ejercicios_cardio extends AppCompatActivity {
 

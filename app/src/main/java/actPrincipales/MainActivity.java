@@ -1,4 +1,4 @@
-package com.example.primeraapp;
+package actPrincipales;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.primeraapp.MapsActivity;
+import com.example.primeraapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,10 +58,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(mapa);
     }
 
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.overflow,menu);
-        return true;
-    }
+
     //Metodo para asignar funciones
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
