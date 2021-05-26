@@ -1,9 +1,17 @@
 package actPrincipales;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,11 +27,26 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem item;
     Button play_pause;
     MediaPlayer mp;
+    NotificationCompat.Builder notificacion;
+    private Button boton;
+    private PendingIntent pendingIntent;
+    private final static String CHANNEL_ID = "NOTIFICACION";
+    private final static int idUnica = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        boton =(Button) findViewById(R.id.button5);
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setPendingIntent();
+                createNotificationChannel();
+                createNotification();
+            }
+        });
+
         play_pause = (Button)findViewById(R.id.play_pause);
         mp = MediaPlayer.create(this,R.raw.cancion);
         play_pause.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +63,32 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+}
+    private void setPendingIntent(){
+        Intent intent = new Intent(this,Activity2_Login.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(Activity2_Login.class);
+        stackBuilder.addNextIntent(intent);
+        pendingIntent = stackBuilder.getPendingIntent(1,PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+    private void createNotificationChannel(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "Notificacion";
+            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID,name, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
+    }
+    private void createNotification(){
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(),CHANNEL_ID);
+        builder.setSmallIcon(R.drawable.ic_baseline_directions_run_24);
+        builder.setContentTitle("Hola");
+        builder.setContentText("Bienvenido a la aplicacion de ACFIT");
+        builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        builder.setContentIntent(pendingIntent);
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
+        notificationManagerCompat.notify(idUnica, builder.build());
     }
 
         public void Registrar (View view)
@@ -47,11 +96,11 @@ public class MainActivity extends AppCompatActivity {
             Intent registrar = new Intent (this, Activity3_Registrarse.class);
             startActivity(registrar);
         }
-        public void Inicio (View view)
+        /*public void Inicio (View view)
         {
         Intent iniciar = new Intent (this, Activity2_Login.class);
         startActivity(iniciar);
-        }
+        }*/
 
     public void Mapa (View view) {
         Intent mapa = new Intent(this, MapsActivity.class);

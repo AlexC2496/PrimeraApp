@@ -17,9 +17,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Resetear_Contrasena extends AppCompatActivity {
     private TextView info;
-    private EditText et_emailReset;
+    private EditText etemailReset;
     private String email , auxInfo;
-    private Button bt_resetPasswd;
+    private Button btresetPasswd;
     private FirebaseAuth mAuth;
     View view;
     private ProgressDialog mDialog;
@@ -35,17 +35,17 @@ public class Resetear_Contrasena extends AppCompatActivity {
         mDialog = new ProgressDialog(this);
 
         //Asignacion de TextView
-        info = findViewById(R.id.textView_infoResetPasswd);
+       // info = findViewById(R.id.textView_infoResetPasswd);
         //Asigacion de EditText
-        et_emailReset = findViewById(R.id.Text_EmailResetPassword);
+        etemailReset = findViewById(R.id.textEmailResetPassword);
         //Asignacion de Button
-        bt_resetPasswd = findViewById(R.id.button_reiniciarContraseña);
+        btresetPasswd = findViewById(R.id.buttonreiniciarContraseña);
         auxInfo = info.getText().toString();
     }
 
     public void RestablecerPassword(View view){
 
-        email = et_emailReset.getText().toString();
+        email = etemailReset.getText().toString();
 
         if(!email.isEmpty()){
 
@@ -55,7 +55,7 @@ public class Resetear_Contrasena extends AppCompatActivity {
             ReiniciarPassword();
 
         }else{
-            Toast.makeText(this, "Debes ingresar un email", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Debes ingresar el email", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -72,11 +72,11 @@ public class Resetear_Contrasena extends AppCompatActivity {
                     info.setText(auxInfo +" "+email);
                     info.setVisibility(view.VISIBLE);
 
-                    et_emailReset.setVisibility(view.INVISIBLE);
-                    bt_resetPasswd.setVisibility(view.INVISIBLE);
+                    etemailReset.setVisibility(view.INVISIBLE);
+                    btresetPasswd.setVisibility(view.INVISIBLE);
 
                 }else{
-                    Toast.makeText(Resetear_Contrasena.this, "Ha ocurrido un error.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Resetear_Contrasena.this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show();
                 }
                 mDialog.dismiss();
             }

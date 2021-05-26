@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,47 +7,23 @@
     android:background="@color/colorFondo"
     tools:context=".Resetear_Contrasena">
 
-    <TextView
-        android:id="@+id/textView_infoResetPasswd"
-        android:layout_width="274dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="88dp"
-        android:textSize="20sp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
-        android:id="@+id/Text_EmailResetPassword"
-        android:layout_width="wrap_content"
+        android:id="@+id/textEmailResetPassword"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="201dp"
-        android:layout_marginBottom="485dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="@string/Email"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:hint="@string/Email" />
 
     <Button
-        android:id="@+id/button_reiniciarContraseña"
-        android:layout_width="213dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="111dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="212dp"
-        android:layout_marginBottom="392dp"
-        android:background="@drawable/button_ro"
-        android:text="@string/Constrasena"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Text_EmailResetPassword"
-        app:layout_constraintVertical_bias="0.4" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/buttonreiniciarContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="148dp"
+        android:text="@string/Constrasena" />
+
+
+</RelativeLayout>

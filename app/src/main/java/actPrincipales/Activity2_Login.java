@@ -1,5 +1,8 @@
 package actPrincipales;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import com.example.primeraapp.R;
 import com.example.primeraapp.Resetear_Contrasena;
@@ -30,8 +34,11 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
     private Button btnInicio;
     private ProgressDialog progressDialog;
 
+
     private FirebaseAuth firebaseAuth;
     private GoogleSignInApi mGoogleSignInClient;
+
+
 
 
     @Override
@@ -48,7 +55,6 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
         btnInicio = (Button) findViewById(R.id.btnInicio);
         progressDialog = new ProgressDialog(this);
         btnInicio.setOnClickListener(this);
-
 
     }
 
