@@ -21,6 +21,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.example.primeraapp.R;
+import com.example.primeraapp.RecyckerViewCardView;
+
 import ejercicios.ejercicios_cardio;
 
 public class Activity_Principal extends AppCompatActivity {
@@ -112,7 +114,7 @@ public class Activity_Principal extends AppCompatActivity {
 
 
     public void Siguiente(View view) {
-        Intent siguiente = new Intent(this, Activity5_Musculacion.class);
+        Intent siguiente = new Intent(this, RecyckerViewCardView.class);
         startActivity(siguiente);
     }
 
