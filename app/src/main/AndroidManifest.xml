@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".terminos"></activity>
+        <activity android:name=".RecyckerViewCardView"></activity>
+        <activity android:name=".terminos" />
         <activity android:name=".Resetear_Contrasena" />
         <activity android:name="ejercicios.ejercicios_cardio" />
         <activity android:name="ejercicios.ejercicios_abdominales" />
@@ -44,12 +45,13 @@
         <activity android:name="actPrincipales.Activity5_Musculacion" />
         <activity android:name="actPrincipales.Activity_Principal" />
         <activity android:name="actPrincipales.Activity3_Registrarse" />
-        <activity android:name="actPrincipales.Activity2_Login"
+        <activity
+            android:name="actPrincipales.Activity2_Login"
             android:parentActivityName="actPrincipales.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="actPrincipales.MainActivity"/>
-         </activity>
+                android:value="actPrincipales.MainActivity" />
+        </activity>
         <activity android:name="actPrincipales.MainActivity" />
         <activity android:name=".Splash">
             <intent-filter>
@@ -59,8 +61,8 @@
             </intent-filter>
         </activity>
         <activity
-             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-             android:theme="@style/Base.Theme.AppCompat"/>
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
     </application>
 
 </manifest>
