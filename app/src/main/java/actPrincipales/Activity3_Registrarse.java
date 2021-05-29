@@ -39,7 +39,7 @@ public class Activity3_Registrarse<firebaseAuth> extends AppCompatActivity imple
     private EditText textTelefono;
     private Button btnRegistrar;
     private ProgressDialog progressDialog;
-    private CheckBox seleccionDireccion;
+    private TextView seleccionDireccion;
     private TextView Textsexo;
     private TextView opciones;
     private FirebaseAuth firebaseAuth;
@@ -87,7 +87,7 @@ public class Activity3_Registrarse<firebaseAuth> extends AppCompatActivity imple
 
         btnRegistrar.setOnClickListener(this);
 
-        seleccionDireccion = (CheckBox) findViewById(R.id.terminos1);
+        seleccionDireccion = (TextView) findViewById(R.id.terminos1);
     }
 
 

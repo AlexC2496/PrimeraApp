@@ -2,44 +2,50 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cv"
-    android:layout_height="wrap_content"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
+    android:background="@color/colorFondo"
     app:cardCornerRadius="20dp"
     app:cardElevation="4dp"
-    app:cardUseCompatPadding="true" >
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
+        android:background="#8C09FF"
         android:orientation="vertical">
+
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="6dp">
+
             <ImageView
                 android:id="@+id/iconImageView"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
                 android:paddingLeft="14dp"
-                android:paddingRight="14dp"
-                android:layout_alignParentLeft="true"/>
+                android:paddingRight="14dp" />
+
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
                 android:layout_marginTop="2dp"
                 android:layout_toEndOf="@id/iconImageView"
-                android:orientation="vertical"
-                android:layout_marginLeft="4dp"
-                android:layout_toRightOf="@+id/iconImageView">
+                android:layout_toRightOf="@+id/iconImageView"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/nameTxtV"
@@ -47,15 +53,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="Ejercicios Hombro"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorBordes"
                     android:textSize="24sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/decripcionTv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorBordes"
+                    android:textStyle="bold"
                     android:text="Este ejercucio es para fortalecer los hombros"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
         </RelativeLayout>

@@ -24,6 +24,7 @@ public class RecyckerViewCardView extends AppCompatActivity {
         elementList.add(new listElement("#775447","Espalda","Serie de ejercicios para fortalecer la espalda"));
         elementList.add(new listElement("#775447","Pecho","Serie de ejercicios para fortalecer el pecho"));
         elementList.add(new listElement("#775447","Abdominal","Serie de ejercicios para fortalecer los abdominales"));
+        elementList.add(new listElement("#775447","Brazos","Serie de ejercicios para fortalecer los brazos"));
         ListAdapter listAdapter = new ListAdapter(elementList,this);
         RecyclerView recyclerView = findViewById(R.id.listRV);
         recyclerView.setHasFixedSize(true);
