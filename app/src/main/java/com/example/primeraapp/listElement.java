@@ -2,21 +2,21 @@ package com.example.primeraapp;
 
 public class listElement {
 
-    public String color;
+    public int color;
     public String ejercicio;
     public String descripcion;
 
-    public listElement(String color, String ejercicio, String descripcion) {
+    public listElement(int color, String ejercicio, String descripcion) {
         this.color = color;
         this.ejercicio = ejercicio;
         this.descripcion = descripcion;
     }
 
-    public String getColor() {
+    public int getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(int color) {
         this.color = color;
     }
 

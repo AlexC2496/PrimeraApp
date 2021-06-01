@@ -23,18 +23,22 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         this.context = context;
         this.mdata = item;
     }
-    @Override
-    public int getItemCount(){
-        return mdata.size();
-    }
+
     @Override
     public ListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View view = mInflater.inflate(R.layout.list_element, null);
+        View view = mInflater.from(parent.getContext()).inflate(R.layout.list_element,parent,false);
         return new ListAdapter.ViewHolder(view);
     }
     @Override
     public void onBindViewHolder(final ListAdapter.ViewHolder holder, final int position){
-        holder.bindData(mdata.get(position));
+        listElement item = mdata.get(position);
+        holder.iconImage.setImageResource(item.getColor());
+        holder.ejercicio.setText(item.getEjercicio());
+        holder.descripcion.setText(item.getDescripcion());
+    }
+    @Override
+    public int getItemCount(){
+        return mdata.size();
     }
 
     public void setItems(List<listElement>items){
@@ -52,7 +56,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         }
 
         void bindData(final listElement item) {
-            iconImage.setColorFilter(Color.parseColor(item.getColor()), PorterDuff.Mode.SRC_IN);
+           // iconImage.setColorFilter(Color.parseColor(item.getColor()), PorterDuff.Mode.SRC_IN);
             ejercicio.setText(item.getEjercicio());
             descripcion.setText(item.getDescripcion());
         }
