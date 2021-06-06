@@ -20,6 +20,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.example.primeraapp.ActivityEjercicio;
+import com.example.primeraapp.Blog;
 import com.example.primeraapp.R;
 import com.example.primeraapp.RecyckerViewCardView;
 
@@ -114,7 +116,7 @@ public class Activity_Principal extends AppCompatActivity {
 
 
     public void Siguiente(View view) {
-        Intent siguiente = new Intent(this, RecyckerViewCardView.class);
+        Intent siguiente = new Intent(this, ActivityEjercicio.class);
         startActivity(siguiente);
     }
 

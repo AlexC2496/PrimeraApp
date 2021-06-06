@@ -19,6 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
         <activity android:name=".RecyckerViewCardView"></activity>
+        <activity android:name=".ActivityEjercicio"></activity>
         <activity android:name=".terminos" />
         <activity android:name=".Resetear_Contrasena" />
         <activity android:name="ejercicios.ejercicios_cardio" />

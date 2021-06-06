@@ -5,11 +5,17 @@ public class listElement {
     public int color;
     public String ejercicio;
     public String descripcion;
+    String purl;
 
-    public listElement(int color, String ejercicio, String descripcion) {
+    public listElement() {
+
+    }
+
+    public listElement(int color, String ejercicio, String descripcion, String purl) {
         this.color = color;
         this.ejercicio = ejercicio;
         this.descripcion = descripcion;
+        this.purl = purl;
     }
 
     public int getColor() {
@@ -34,5 +40,13 @@ public class listElement {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getPurl() {
+        return purl;
+    }
+
+    public void setPurl(String purl) {
+        this.purl = purl;
     }
 }

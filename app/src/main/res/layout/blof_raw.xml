@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="20dp"
+    android:elevation="90dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#235545">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="350sp"
+            android:scaleType="centerCrop"
+            android:id="@+id/post_image">
+
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_title"
+            android:layout_margin="10dp"
+            android:textColor="#ffff"
+            android:text="POST TITULO">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_descripcion"
+            android:layout_margin="10dp"
+            android:textColor="#ffff"
+            android:text="POST DESCRIPCION">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/post_url"
+            android:textColor="#ffff"
+            android:text="POST URL">
+        </TextView>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -19,16 +19,6 @@ public class RecyckerViewCardView extends AppCompatActivity {
         init();
     }
     public void init(){
-        elementList = new ArrayList<>();
-        elementList.add(new listElement(R.drawable.boxeo,"Hombro","Serie de ejercicios para fortalecer el hombro"));
-        elementList.add(new listElement(R.drawable.boxeo,"Espalda","Serie de ejercicios para fortalecer la espalda"));
-        elementList.add(new listElement(R.drawable.boxeo,"Pecho","Serie de ejercicios para fortalecer el pecho"));
-        elementList.add(new listElement(R.drawable.boxeo,"Abdominal","Serie de ejercicios para fortalecer los abdominales"));
-        elementList.add(new listElement(R.drawable.boxeo,"Brazos","Serie de ejercicios para fortalecer los brazos"));
-        ListAdapter listAdapter = new ListAdapter(elementList,this);
-        RecyclerView recyclerView = findViewById(R.id.listRV);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(listAdapter);
+
     }
 }
