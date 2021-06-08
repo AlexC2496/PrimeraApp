@@ -5,7 +5,7 @@
     android:id="@+id/actEjercicios"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorFondo"
+    android:background="@color/colorPrimary"
     tools:context=".RecyckerViewCardView">
 
     <TextView
@@ -16,7 +16,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="303dp"
         android:layout_marginBottom="1dp"
-        android:background="@color/colorFondo"
+        android:background="@color/colorPrimary"
         android:text="@string/Ejercicios"
         android:textAllCaps="true"
         android:textColor="@color/colorFondoOscuro"
@@ -36,7 +36,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:background="@color/colorFondo"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
