@@ -2,7 +2,7 @@ package com.example.primeraapp;
 
 public class listElement {
 
-    public int color;
+    public String color;
     public String ejercicio;
     public String descripcion;
     String purl;
@@ -11,18 +11,24 @@ public class listElement {
 
     }
 
-    public listElement(int color, String ejercicio, String descripcion, String purl) {
+    public listElement(String color, String ejercicio, String descripcion) {
+        this.color = color;
+        this.ejercicio = ejercicio;
+        this.descripcion = descripcion;
+    }
+
+    public listElement(String color, String ejercicio, String descripcion, String purl) {
         this.color = color;
         this.ejercicio = ejercicio;
         this.descripcion = descripcion;
         this.purl = purl;
     }
 
-    public int getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(int color) {
+    public void setColor(String color) {
         this.color = color;
     }
 

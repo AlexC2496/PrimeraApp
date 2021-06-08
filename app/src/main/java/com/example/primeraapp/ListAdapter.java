@@ -18,11 +18,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private LayoutInflater mInflater;
     private Context context;
 
-    public ListAdapter(List<listElement> item, Context context){
+    public ListAdapter(List<listElement> item){
         this.mInflater = LayoutInflater.from(context);
         this.context = context;
         this.mdata = item;
     }
+
+
+
 
     @Override
     public ListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
@@ -32,7 +35,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(final ListAdapter.ViewHolder holder, final int position){
         listElement item = mdata.get(position);
-        holder.iconImage.setImageResource(item.getColor());
+      //  holder.iconImage.s();
         holder.ejercicio.setText(item.getEjercicio());
         holder.descripcion.setText(item.getDescripcion());
     }
@@ -50,7 +53,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
         ViewHolder(View view){
             super(view);
-            iconImage = view.findViewById(R.id.iconImageView);
+            color= view.findViewById(R.id.iconImageView);
             ejercicio = view.findViewById(R.id.nameTxtV);
             descripcion = view.findViewById(R.id.decripcionTv);
         }

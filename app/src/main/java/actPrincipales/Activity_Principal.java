@@ -19,11 +19,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.primeraapp.ActivityEjercicio;
-import com.example.primeraapp.Blog;
+import com.example.primeraapp.AdminSQLiteOpenHelper;
 import com.example.primeraapp.R;
 import com.example.primeraapp.RecyckerViewCardView;
+import com.example.primeraapp.listElement;
 
 import ejercicios.ejercicios_cardio;
 
@@ -33,6 +35,7 @@ public class Activity_Principal extends AppCompatActivity {
 
     ImageView profile;
     Button btnGallery;
+    Button btnAct;
 
     private static final int REQUEST_PERMISSION_CODE = 100;
     private static final int REQUEST_IMAGE_GALLERY = 101;
@@ -46,6 +49,8 @@ public class Activity_Principal extends AppCompatActivity {
         btnGallery = findViewById(R.id.btnGallery);
         profile = findViewById(R.id.perfil);
 
+
+        final AdminSQLiteOpenHelper adminSQLiteOpenHelper = new AdminSQLiteOpenHelper(getApplicationContext());
 
         btnGallery.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +66,7 @@ public class Activity_Principal extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
@@ -128,6 +134,11 @@ public class Activity_Principal extends AppCompatActivity {
     public void Atras(View view) {
         Intent atras = new Intent(this, MainActivity.class);
         startActivity(atras);
+    }
+
+    public void siguienteVideos(View view) {
+        Intent siguienteVideos = new Intent(this, Activity5_Musculacion.class);
+        startActivity(siguienteVideos);
     }
 
 }

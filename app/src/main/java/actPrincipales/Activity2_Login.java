@@ -39,8 +39,6 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
     private GoogleSignInApi mGoogleSignInClient;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

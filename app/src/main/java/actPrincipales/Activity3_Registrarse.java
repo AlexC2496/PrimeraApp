@@ -97,7 +97,7 @@ public class Activity3_Registrarse<firebaseAuth> extends AppCompatActivity imple
     private void registrarUsuario() {
         //Obtener los datos del usuario
         final String email = TextEmail.getText().toString().trim();
-        String password = TextPassword.getText().toString().trim();
+        final String password = TextPassword.getText().toString().trim();
         final String nombre = TextName.getText().toString().trim();
         final String telefono = textTelefono.getText().toString().trim();
         final String sexo = Textsexo.getText().toString().trim();
@@ -133,7 +133,7 @@ public class Activity3_Registrarse<firebaseAuth> extends AppCompatActivity imple
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Usuario usuario = new Usuario(nombre,email,telefono,sexo); //Creacion de un onnjeto de tipo usuario
+                            Usuario usuario = new Usuario(nombre,email,telefono,sexo,password); //Creacion de un onnjeto de tipo usuario
 
 
                             FirebaseDatabase.getInstance().getReference("Usuario")

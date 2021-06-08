@@ -14,7 +14,9 @@
     <string name="Terminos2"> Confirm the terms</string>
     <string name="Acept">Acept</string>
     <string name="Cancel">Cancel</string>
-    <string name="Ejercicios">Exercise</string>
+    <string name="Ejercicios">Workout</string>
+    <string name="videosE">Training Videos</string>
+
     <string name="Horarios">Schedule</string>
     <string name="Chest_exercises">Chest exercises</string>
     <string name="Back_exercises">Back exercises</string>
@@ -43,5 +45,6 @@
         Activity on third-party sites and apps that use our services
         Chrome browsing history you’ve synced with your Google Account
     </string>
-
+    <string name="btnUpdate">Update</string>
+    <string name="textPerfil">Update User Profile</string>
 </resources>
