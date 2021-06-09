@@ -113,6 +113,7 @@
                     android:background="@drawable/button_ro"
                     android:onClick="RecuperarContrasena"
                     android:text="@string/Recuperar_Contrasena"
+                    android:textColor="@color/colorFondoOscuro"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"

@@ -5,5 +5,5 @@
     <color name="colorAccent">#ff0000</color>
     <color name="colorFondo">#2979FF</color>
     <color name="colorBordes">#FFFFFF</color>
-    <color name="colorFondoOscuro">#222020</color>
+    <color name="colorFondoOscuro">#FFFFFF</color>
 </resources>
