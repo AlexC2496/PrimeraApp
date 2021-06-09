@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationCompat;
 
 import com.example.primeraapp.R;
@@ -53,7 +55,7 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
         btnInicio = (Button) findViewById(R.id.btnInicio);
         progressDialog = new ProgressDialog(this);
         btnInicio.setOnClickListener(this);
-
+        setDayNight();
     }
 
 
@@ -103,7 +105,16 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
 
 
 
-
+    public void setDayNight(){
+        SharedPreferences sp = getSharedPreferences("SP", this.MODE_PRIVATE);
+        int theme = sp.getInt("Theme", 1);
+        if(theme==0){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        else{
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+    }
     @Override
     public void onClick(View view) {
         iniciarrUsuario();

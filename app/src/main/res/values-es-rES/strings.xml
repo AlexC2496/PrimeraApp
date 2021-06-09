@@ -16,7 +16,8 @@
     <string name="Cancel">Cancelar</string>
     <string name="Ejercicios">Rutinas de Ejericios</string>
     <string name="videosE">Videos de entrenamietnos</string>
-    <string name="Horarios">Horarios</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
     <string name="Photo">Foto</string>
     <string name="title_activity_maps">Mapa</string>
     <string name="Chest_exercises">Ejercicios Pecho</string>
@@ -48,4 +49,5 @@
     </string>
     <string name="btnUpdate">Actualizar</string>
     <string name="textPerfil">Actualizar Perfil de Usuario</string>
+    <string name="title_home">Home</string>
 </resources>

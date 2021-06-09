@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+
     tools:context="actPrincipales.Activity3_Registrarse">
 
     <ImageView
@@ -15,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="38dp"
+        android:layout_marginStart="37dp"
         android:layout_marginTop="215dp"
         android:layout_marginEnd="330dp"
         android:layout_marginBottom="476dp"
@@ -53,7 +54,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="37dp"
         android:layout_marginTop="332dp"
         android:layout_marginEnd="332dp"
         android:layout_marginBottom="351dp"
@@ -62,10 +63,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:srcCompat="@drawable/ic_baseline_vpn_key_24" />
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="333dp"
+        android:layout_marginBottom="529dp"
+        app:layout_constraintEnd_toStartOf="@+id/nombre"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_contacts_24" />
 
     <EditText
         android:id="@+id/nombre"
-        android:layout_width="228dp"
+        android:layout_width="226dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -132,14 +150,14 @@
 
     <EditText
         android:id="@+id/telefono"
-        android:layout_width="41dp"
+        android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="154dp"
+        android:layout_marginStart="155dp"
         android:layout_marginTop="218dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="467dp"
@@ -153,23 +171,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.525" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="152dp"
-        android:layout_marginEnd="333dp"
-        android:layout_marginBottom="529dp"
-        app:layout_constraintEnd_toStartOf="@+id/nombre"
-        app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_contacts_24" />
+
 
     <Button
         android:id="@+id/btnAceptar"
@@ -193,7 +195,7 @@
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="99dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -207,6 +209,7 @@
         android:onClick="Atras"
         android:text="@string/Cancel"
         android:textColor="#FFFFFF"
+        android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnAceptar" />

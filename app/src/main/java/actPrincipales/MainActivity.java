@@ -1,6 +1,7 @@
 package actPrincipales;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
@@ -10,6 +11,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setDayNight();
         boton =(Button) findViewById(R.id.button5);
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +67,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
 }
+    public void setDayNight(){
+        SharedPreferences sp = getSharedPreferences("SP", this.MODE_PRIVATE);
+       int theme = sp.getInt("Theme", 1);
+        if(theme==0){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        else{
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+    }
     private void setPendingIntent(){
         Intent intent = new Intent(this,Activity2_Login.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
@@ -121,4 +135,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    }
+
+}

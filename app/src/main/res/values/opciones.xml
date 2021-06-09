@@ -2,8 +2,8 @@
 <resources>
 
     <string-array name = "combo" >
-        <item>Hombre</item>
-        <item>Mujer</item>
+        <item>@string/hombre</item>
+        <item>@string/mujer</item>
     </string-array>
 
 </resources>

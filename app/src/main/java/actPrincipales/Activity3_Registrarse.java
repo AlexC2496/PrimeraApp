@@ -2,6 +2,7 @@ package actPrincipales;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -46,6 +47,7 @@ public class Activity3_Registrarse<firebaseAuth> extends AppCompatActivity imple
     private FirebaseDatabase database;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +69,7 @@ public class Activity3_Registrarse<firebaseAuth> extends AppCompatActivity imple
 
             }
         });
+
 
 
         //Inicializamos objeto

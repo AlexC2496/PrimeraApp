@@ -17,7 +17,8 @@
     <string name="Ejercicios">Workout</string>
     <string name="videosE">Training Videos</string>
 
-    <string name="Horarios">Schedule</string>
+    <string name="hombre">Man</string>
+    <string name="mujer">Woman</string>
     <string name="Chest_exercises">Chest exercises</string>
     <string name="Back_exercises">Back exercises</string>
     <string name="Shoulder_exercises">Shoulder exercises</string>
@@ -28,6 +29,7 @@
     <string name="Item2">Go back</string>
     <string name="Item3">Select language</string>
     <string name="datos">Check the termens</string>
+
     <string name="info">
         We collect information to provide better services to all our users — from figuring out basic stuff like which language you speak, to more complex things
         like which ads you’ll find most useful, the people who matter most to you online, or which YouTube videos you might like.
@@ -47,4 +49,5 @@
     </string>
     <string name="btnUpdate">Update</string>
     <string name="textPerfil">Update User Profile</string>
+    <string name="title_home">Home</string>
 </resources>
