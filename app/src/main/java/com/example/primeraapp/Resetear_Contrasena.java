@@ -1,7 +1,9 @@
 package com.example.primeraapp;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,75 +15,65 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 
+import actPrincipales.Activity2_Login;
+import actPrincipales.Activity_Principal;
+
 public class Resetear_Contrasena extends AppCompatActivity {
-    private TextView info;
-    private EditText etemailReset;
-    private String email , auxInfo;
-    private Button btresetPasswd;
-    private FirebaseAuth mAuth;
-    View view;
+    private EditText email;
+    private Button recuperar;
     private ProgressDialog mDialog;
+    FirebaseAuth auth;
+    private String correo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resetear__contrasena);
 
-        //Asignacion de FirebaseAuth
-        mAuth = FirebaseAuth.getInstance();
-
-        //Asignacio de ProgressDialog
+        auth= FirebaseAuth.getInstance();
+        email = findViewById(R.id.gmail);
+        recuperar = findViewById(R.id.btnRecuperar);
         mDialog = new ProgressDialog(this);
-
-        //Asignacion de TextView
-       // info = findViewById(R.id.textView_infoResetPasswd);
-        //Asigacion de EditText
-        etemailReset = findViewById(R.id.textEmailResetPassword);
-        //Asignacion de Button
-        btresetPasswd = findViewById(R.id.buttonreiniciarContraseña);
-        auxInfo = info.getText().toString();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getRecuperar();
     }
 
-    public void RestablecerPassword(View view){
-
-        email = etemailReset.getText().toString();
-
-        if(!email.isEmpty()){
-
-            mDialog.setMessage("Espere un momento...");
-            mDialog.setCanceledOnTouchOutside(false);
-            mDialog.show();
-            ReiniciarPassword();
-
-        }else{
-            Toast.makeText(this, "Debes ingresar el email", Toast.LENGTH_SHORT).show();
-        }
-
+    private void getRecuperar() {
+        recuperar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                 correo = email.getText().toString().trim();
+                if(!correo.isEmpty()){
+                    mDialog.setMessage("Espere un momento..");
+                    mDialog.setCanceledOnTouchOutside(false);
+                    mDialog.show();
+                    getEnviarCorreo();
+                }else{
+                    Toast.makeText(Resetear_Contrasena.this, "El correo no se pudo enviar correctamente", Toast.LENGTH_SHORT).show();
+                    Intent inicio = new Intent(getApplication(), Activity_Principal.class);
+                }
+            }
+        });
     }
-
-
-    private void ReiniciarPassword() {
-
-        mAuth.setLanguageCode("es");
-        mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+    private void getEnviarCorreo(){
+        auth.setLanguageCode("es");
+        auth.sendPasswordResetEmail(correo).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
+                    Toast.makeText(Resetear_Contrasena.this, "Por favor revise su correo para restarurar contraseña. ", Toast.LENGTH_SHORT).show();
+                    Intent inicio = new Intent(Resetear_Contrasena.this, Activity2_Login.class);
+                    startActivity(inicio);
+                    finish();
+                }else {
+                    Toast.makeText(Resetear_Contrasena.this, "El correo no se ha podido enviar correctamente ", Toast.LENGTH_SHORT).show();
 
-                    info.setText(auxInfo +" "+email);
-                    info.setVisibility(view.VISIBLE);
-
-                    etemailReset.setVisibility(view.INVISIBLE);
-                    btresetPasswd.setVisibility(view.INVISIBLE);
-
-                }else{
-                    Toast.makeText(Resetear_Contrasena.this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show();
                 }
-                mDialog.dismiss();
             }
         });
-
     }
 
 }

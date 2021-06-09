@@ -50,7 +50,8 @@ public class Activity_Principal extends AppCompatActivity {
         btnGallery = findViewById(R.id.btnGallery);
         profile = findViewById(R.id.perfil);
 
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         final AdminSQLiteOpenHelper adminSQLiteOpenHelper = new AdminSQLiteOpenHelper(getApplicationContext());
 
         btnGallery.setOnClickListener(new View.OnClickListener() {

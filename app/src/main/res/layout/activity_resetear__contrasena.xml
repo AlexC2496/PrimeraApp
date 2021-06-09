@@ -4,26 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorFondo"
+    android:background="@color/colorPrimary"
     tools:context=".Resetear_Contrasena">
 
     <EditText
-        android:id="@+id/textEmailResetPassword"
+        android:id="@+id/gmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
-        android:hint="@string/Email" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="631dp"
+        android:background="@color/colorPrimary"
+        android:hint="@string/Email"
+        android:textColor="@color/colorBordes" />
 
     <Button
-        android:id="@+id/buttonreiniciarContraseña"
+        android:id="@+id/btnRecuperar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="148dp"
-        android:text="@string/Constrasena" />
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="535dp"
+        android:background="@drawable/button_ro"
+        android:text="@string/Constrasena"
+        android:textColor="@color/colorFondoOscuro" />
 
 
 </RelativeLayout>

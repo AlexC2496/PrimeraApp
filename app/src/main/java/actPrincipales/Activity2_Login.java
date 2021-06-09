@@ -56,6 +56,8 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
         progressDialog = new ProgressDialog(this);
         btnInicio.setOnClickListener(this);
         setDayNight();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
 
