@@ -77,12 +77,12 @@ public class Activity_Principal extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
         if(id == R.id.item1){
-            Intent siguiente = new Intent(this, Activity5_Musculacion.class);
-            startActivity(siguiente);
+            Intent siguiente2 = new Intent(this, Activity5_Musculacion.class);
+            startActivity(siguiente2);
             Toast.makeText(this,"Go to exsercise",Toast.LENGTH_SHORT).show();
         } else if(id == R.id.item2) {
-            Intent atras = new Intent(this, MainActivity.class);
-            startActivity(atras);
+            Intent atra2s = new Intent(this, MainActivity.class);
+            startActivity(atra2s);
             Toast.makeText(this, "Go back", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);

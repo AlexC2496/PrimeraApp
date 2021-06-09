@@ -24,6 +24,6 @@ public class ejercicios_espalda extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
 
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://www.youtube.com/watch?v=42Ufgq1oeq4&ab_channel=EntrenaconSergioPeinado");
+        webView.loadUrl("https://www.youtube.com/watch?v=KHUvqjktkNs");
     }
 }

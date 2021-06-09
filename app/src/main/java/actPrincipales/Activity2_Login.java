@@ -132,5 +132,6 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
         startActivity(recuperar);
     }
 
+
 }
 
