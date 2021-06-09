@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
 
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -21,7 +21,7 @@
         android:layout_marginStart="11dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="607dp"
+        android:layout_marginBottom="619dp"
         android:background="@drawable/button_ro"
         android:text="@string/titulo1"
         android:textAlignment="center"
@@ -55,26 +55,30 @@
         app:srcCompat="@drawable/inicio" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="17dp"
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="572dp"
-
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="142dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="562dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="133dp"
         android:background="@drawable/button_ro"
         android:text="ACFIT"
         android:textAlignment="center"
-        android:textColor="@color/colorBordes"
-        android:textSize="24sp"
+        android:textColor="@android:color/background_light"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061" />
+
+
 </RelativeLayout>
