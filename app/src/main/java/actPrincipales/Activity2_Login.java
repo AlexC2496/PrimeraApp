@@ -64,6 +64,7 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
         final String email = TextEmail2.getText().toString().trim();
         String password = TextPassword2.getText().toString().trim();
 
+
         //Verificamos que los datos no estan vacios
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Se debe ingresar un correo", Toast.LENGTH_SHORT).show();
@@ -94,7 +95,7 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
                             if (task.getException() instanceof FirebaseAuthUserCollisionException) {//si se presenta una colisión
                                 Toast.makeText(Activity2_Login.this, "El usuario ya existe ", Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(Activity2_Login.this, "El usuario no existe ", Toast.LENGTH_LONG).show();
+                                Toast.makeText(Activity2_Login.this, "El usuario no existe ", Toast.LENGTH_SHORT).show();
                             }
                         }
                         progressDialog.dismiss();

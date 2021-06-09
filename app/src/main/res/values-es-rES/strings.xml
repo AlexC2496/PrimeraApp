@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">PrimeraApp</string>
     <string name="titulo1">Bienvenido</string>
+    <string name="titulo2">Bienvenido:</string>
     <string name="Registro">Iniciar Sesion</string>
     <string name="Iniciar_Sesion">Registrarse</string>
     <string name="Nombre_Usuario">Nombre</string>
@@ -29,6 +30,7 @@
     <string name="Item2">Atras"</string>
     <string name="Item3">Seleccionar idioma</string>
     <string name="datos">Marcar los terminos</string>
+
     <string name="info">
         Recogemos información para proporcionar los mejores servicios a todos nuestros usuarios: desde determinar información básica, como el idioma que hablas, hasta datos más complejos,
         como los anuncios que te resultarán más útiles, las personas que más te interesan online o los vídeos de YouTube que te pueden gustar.

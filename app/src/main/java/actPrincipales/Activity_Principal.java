@@ -44,8 +44,9 @@ public class Activity_Principal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activity4_principal);
-        txtUser=(TextView)findViewById(R.id.principal);
-
+        txtUser=(TextView)findViewById(R.id.principal3);
+        String user = getIntent().getStringExtra("names");
+        txtUser.setText(user);
         btnGallery = findViewById(R.id.btnGallery);
         profile = findViewById(R.id.perfil);
 

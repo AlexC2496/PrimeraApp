@@ -2,6 +2,7 @@
     <string name="app_name">PrimeraApp</string>
     <string name="title_activity_maps">Map</string>
     <string name="titulo1">Welcome</string>
+    <string name="titulo2">Welcome:</string>
     <string name="Registro">Log in</string>
     <string name="Iniciar_Sesion">Sign in</string>
     <string name="Nombre_Usuario">Name</string>
