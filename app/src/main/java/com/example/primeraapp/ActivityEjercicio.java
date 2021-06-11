@@ -55,7 +55,7 @@ public class ActivityEjercicio extends AppCompatActivity {
        }
        public void setColor(Context ctx, String color){
            ImageView post_Image=(ImageView)view.findViewById(R.id.post_image);
-           Picasso.with(ctx).load(color).into(post_Image);
+           Picasso.get().load(color).into(post_Image);
        }
        public void setEjercicio(String ejercicio)
        {

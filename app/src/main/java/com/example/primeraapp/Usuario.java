@@ -17,13 +17,14 @@ public class Usuario {
         }
 
 
-    public Usuario(String nombre, String email, String telefono, String sexo, String imagen, String password) {
+    public Usuario(String nombre, String email, String telefono, String sexo, String imagen, String password, String foto_perfil) {
         this.nombre = nombre;
         this.email = email;
         this.telefono = telefono;
         this.sexo = sexo;
         this.imagen = imagen;
         this.password = password;
+        this.foto_perfil = foto_perfil;
     }
 
     public Usuario(String nombre, String email, String telefono, String sexo, String imagen){
@@ -81,5 +82,15 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getFoto_perfil() {
+        return foto_perfil;
+    }
+
+    public void setFoto_perfil(String foto_perfil) {
+        this.foto_perfil = foto_perfil;
+    }
+
+    String foto_perfil;
 }
 

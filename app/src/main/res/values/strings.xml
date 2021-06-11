@@ -28,9 +28,10 @@
     <string name="Photo">Photo</string>
     <string name="Item1">Go to exercice</string>
     <string name="Item2">Go back</string>
-    <string name="Item3">Select language</string>
+    <string name="Item3">Log Out</string>
     <string name="datos">Check the termens</string>
-
+    <string name="guardar">Save</string>
+    <string name="eliminar">Delete</string>
     <string name="info">
         We collect information to provide better services to all our users — from figuring out basic stuff like which language you speak, to more complex things
         like which ads you’ll find most useful, the people who matter most to you online, or which YouTube videos you might like.

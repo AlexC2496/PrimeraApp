@@ -4,6 +4,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -29,6 +30,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
+import static com.example.primeraapp.Preferences.PREFERENCE_ESTADO_BUTTON_SESION;
+import static com.example.primeraapp.Preferences.STRING_PREFERENCES;
+
 public class Activity2_Login extends AppCompatActivity implements View.OnClickListener {
 
     private EditText TextEmail2;
@@ -39,6 +43,8 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
 
     private FirebaseAuth firebaseAuth;
     private GoogleSignInApi mGoogleSignInClient;
+
+
 
 
     @Override
@@ -107,7 +113,10 @@ public class Activity2_Login extends AppCompatActivity implements View.OnClickLi
     }
 
 
-
+    public static void changeEstado(Context c, boolean b) {
+        SharedPreferences preferences = c.getSharedPreferences(STRING_PREFERENCES,MODE_PRIVATE);
+        preferences.edit().putBoolean(PREFERENCE_ESTADO_BUTTON_SESION,b).apply();
+    }
     public void setDayNight(){
         SharedPreferences sp = getSharedPreferences("SP", this.MODE_PRIVATE);
         int theme = sp.getInt("Theme", 1);
