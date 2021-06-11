@@ -71,13 +71,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:orientation="horizontal"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
                 android:padding="30dp">
 
                 <Button
                     android:id="@+id/btnInicio"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="60dp"
                     android:layout_marginEnd="100dp"
@@ -92,9 +92,9 @@
 
                 <Button
                     android:id="@+id/button3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="60dp"
                     android:layout_marginEnd="100dp"
                     android:background="@drawable/button_ro"
                     android:onClick="VolverAtras"
@@ -107,9 +107,10 @@
 
                 <Button
                     android:id="@+id/button9"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="23dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="100dp"
                     android:background="@drawable/button_ro"
                     android:onClick="RecuperarContrasena"
                     android:text="@string/Recuperar_Contrasena"

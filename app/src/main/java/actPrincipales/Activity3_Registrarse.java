@@ -6,6 +6,8 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -48,11 +51,13 @@ public class Activity3_Registrarse<firebaseAuth> extends AppCompatActivity imple
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activity3__registrarse);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         //Creacion del spinner
         Opciones = (TextView) findViewById(R.id.opciones);
         combo = (Spinner) findViewById(R.id.spinnerOpciones);
@@ -175,6 +180,7 @@ public class Activity3_Registrarse<firebaseAuth> extends AppCompatActivity imple
         Intent politicas = new Intent(this, terminos.class);
         startActivity(politicas);
     }
+
 
 
         @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
