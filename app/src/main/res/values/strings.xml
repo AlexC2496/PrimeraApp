@@ -29,6 +29,7 @@
     <string name="Item1">Go to exercice</string>
     <string name="Item2">Go back</string>
     <string name="Item3">Log Out</string>
+    <string name="Item4">Delete Photo</string>
     <string name="datos">Check the termens</string>
     <string name="guardar">Save</string>
     <string name="eliminar">Delete</string>

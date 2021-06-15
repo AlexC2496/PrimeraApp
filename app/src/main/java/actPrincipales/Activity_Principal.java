@@ -3,6 +3,7 @@ package actPrincipales;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,7 +11,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.net.VpnService;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -30,14 +30,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.primeraapp.ActivityEjercicio;
 import com.example.primeraapp.AdminSQLiteOpenHelper;
 import com.example.primeraapp.R;
-import com.example.primeraapp.RecyckerViewCardView;
 import com.example.primeraapp.Usuario;
-import com.example.primeraapp.listElement;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -69,35 +67,36 @@ public class Activity_Principal extends AppCompatActivity {
     private SharedPreferences prefs;
     private static final int REQUEST_PERMISSION_CODE = 100;
     private static final int REQUEST_IMAGE_GALLERY = 101;
+    private ProgressDialog progressDialog;
+
     StorageReference storageReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activity4_principal);
         prefs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
-
-
-
+        storageReference= FirebaseStorage.getInstance().getReference();
         txtUser=(TextView)findViewById(R.id.principal3);
         String user = getIntent().getStringExtra("names");
         txtUser.setText(user);
-        btnGallery = findViewById(R.id.btnGallery);
-        profile = findViewById(R.id.perfil);
+        btnGallery = (Button) findViewById(R.id.btnGallery);
+        profile = (ImageView) findViewById(R.id.perfil);
+        progressDialog = new ProgressDialog(this);
         cerrarSesion = (Button) findViewById(R.id.item3);
 
         final AdminSQLiteOpenHelper adminSQLiteOpenHelper = new AdminSQLiteOpenHelper(getApplicationContext());
 
-        btnGallery.setOnClickListener(new View.OnClickListener() {
-            @Override
+    btnGallery.setOnClickListener(new View.OnClickListener() {
+           @Override
             public void onClick(View view){
                 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                     if (ActivityCompat.checkSelfPermission(Activity_Principal.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
-                        subirFoto();
+                        openGallery();
                     }else{
                         ActivityCompat.requestPermissions(Activity_Principal.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_PERMISSION_CODE);
                     }
                 }else{
-                    subirFoto();
+                    openGallery();
                 }
             }
         });
@@ -127,29 +126,42 @@ public class Activity_Principal extends AppCompatActivity {
             Intent atra2s = new Intent(this, MainActivity.class);
             startActivity(atra2s);
             Toast.makeText(this, "Go back", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.item3){
+        } else if (id == R.id.item3) {
             logOut();
         }
         return super.onOptionsItemSelected(item);
     }
 
-    /*@Override
+    @Override
     public void onActivityResult (int requestcode, int resultCode, @Nullable Intent data){
-        if(requestcode == REQUEST_IMAGE_GALLERY){
+        if(requestcode == REQUEST_IMAGE_GALLERY ){
             if(resultCode == Activity.RESULT_OK && data != null){
                 Uri photo = data.getData();
                 profile.setImageURI(photo);
+                StorageReference filePath = storageReference.child("fotos").child(photo.getLastPathSegment());
+                filePath.putFile(photo).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        String descargarFoto = photo.toString();
+                        Glide.with(Activity_Principal.this)
+                                .load(descargarFoto)
+                                .fitCenter()
+                                .centerCrop()
+                                .into(profile);
+                        Toast.makeText(Activity_Principal.this,"",Toast.LENGTH_SHORT).show();
+                    }
+                });
             }else{
                 Toast.makeText(this, "No se recogió ninguna foto de la galeria",Toast.LENGTH_SHORT).show();
             }
         }
         super.onActivityResult(requestcode, resultCode, data);
-    }*/
+    }
     @Override
     public void onRequestPermissionsResult (int requestcode, @NonNull String[] permissions, @NonNull int [] grantResults){
         if (requestcode == REQUEST_PERMISSION_CODE){
             if (permissions.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                subirFoto();
+                openGallery();
             }else{
                 Toast.makeText(this, "Necesitas habilitar los permisos", Toast.LENGTH_SHORT).show();
             }
@@ -157,12 +169,12 @@ public class Activity_Principal extends AppCompatActivity {
         super.onRequestPermissionsResult(requestcode, permissions, grantResults);
     }
 
-    /*private void openGallery()
+    private void openGallery()
     {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
         startActivityForResult(intent, REQUEST_IMAGE_GALLERY);
-    }*/
+    }
 
 
 
@@ -190,7 +202,8 @@ public class Activity_Principal extends AppCompatActivity {
 
 
 
-    Dialog dialogSubirFoto;
+
+   /* Dialog dialogSubirFoto;
     final  int CODIGO_RESPUESTA_GALERIA = 3;
     Uri uri;
     ImageView imgFotoPerfil;
@@ -200,11 +213,11 @@ public class Activity_Principal extends AppCompatActivity {
         dialogSubirFoto.setContentView(R.layout.subir_foto);
         imgFotoPerfil = (ImageView)dialogSubirFoto.findViewById(R.id.imgPerfil);
         Button btnEliminar = (Button)dialogSubirFoto.findViewById(R.id.btnEliminar);
-        Button btnGaleria = (Button)dialogSubirFoto.findViewById(R.id.btnGuardar);
-        Button btnCancelar = (Button)dialogSubirFoto.findViewById(R.id.btnCancel);
+        Button btnGaleria2 = (Button)dialogSubirFoto.findViewById(R.id.btnGuardar);
+        Button btnCancelar = (Button)dialogSubirFoto.findViewById(R.id.btnGaleria2);
 
         Picasso.get().load (usuario.getFoto_perfil()).into (imgFotoPerfil);
-        btnGaleria.setOnClickListener(new View.OnClickListener() {
+        btnGaleria2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -274,6 +287,6 @@ public class Activity_Principal extends AppCompatActivity {
 
             }
         }
-    }
+    }*/
 
 }
